@@ -13,12 +13,11 @@ export const scrapImgsFromUrl = async (): Promise<Array<string | null>> => {
     console.log('before goto page')
     const issueSrcs = await page.evaluate(() => {
       const srcs = Array.from(
-        document.querySelectorAll('.comicpic')
+        document.querySelectorAll('img')
       ).map((image) => image.getAttribute('src'))
       return srcs
     })
 
-    console.log('images', issueSrcs)
     return await new Promise(resolve => resolve(issueSrcs))
   } catch (error) {
     console.log(error)

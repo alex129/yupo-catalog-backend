@@ -2,7 +2,7 @@ import express from 'express'
 import routeScraping from './routes/scraping'
 const app = express()
 app.use(express.json())
-const PORT = 3007
+const PORT = 3001
 
 app.use('/api/scrap', routeScraping)
 
