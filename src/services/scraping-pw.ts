@@ -1,8 +1,9 @@
-import puppeteer from 'puppeteer'
+import { webkit } from 'playwright'
+
 export const scrapImgsFromUrl = async (url: string): Promise<Array<string | null>> => {
   try {
-    console.log('initializing puppeteer')
-    const browser = await puppeteer.launch()
+    console.log('playwright')
+    const browser = await webkit.launch()
     const page = await browser.newPage()
     console.log('go to page')
 

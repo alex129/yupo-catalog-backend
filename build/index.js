@@ -7,7 +7,7 @@ const express_1 = __importDefault(require("express"));
 const scraping_1 = __importDefault(require("./routes/scraping"));
 const app = (0, express_1.default)();
 app.use(express_1.default.json());
-const PORT = 3004;
+const PORT = 3012;
 app.use('/api/scrap', scraping_1.default);
 app.get('/test', (_req, res) => {
     res.status(200).send({

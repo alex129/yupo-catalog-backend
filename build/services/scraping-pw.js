@@ -8,16 +8,13 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.scrapImgsFromUrl = void 0;
-const puppeteer_1 = __importDefault(require("puppeteer"));
+const playwright_1 = require("playwright");
 const scrapImgsFromUrl = (url) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        console.log('initializing puppeteer');
-        const browser = yield puppeteer_1.default.launch();
+        console.log('playwright');
+        const browser = yield playwright_1.webkit.launch();
         const page = yield browser.newPage();
         console.log('go to page');
         yield page.goto(url);
